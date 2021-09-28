@@ -2,7 +2,7 @@ import requests
 from urllib.parse import urljoin
 from requests.exceptions import ConnectionError, HTTPError, ReadTimeout
 from urllib3.exceptions import ProtocolError
-from util import makeuci
+from util import makeusi
 from http.client import RemoteDisconnected
 import backoff
 
@@ -67,7 +67,7 @@ class Lishogi:
         return self.api_post(ENDPOINTS["upgrade"])
 
     def make_move(self, game_id, move):
-        return self.api_post(ENDPOINTS["move"].format(game_id, makeuci(move)))
+        return self.api_post(ENDPOINTS["move"].format(game_id, makeusi(move)))
 
     def chat(self, game_id, room, text):
         payload = {'room': room, 'text': text}
