@@ -3,10 +3,10 @@ import re
 #usi, uci
 
 def isusi(move):
-    return bool(re.match("([1-9][a-i][1-9][a-i]\+?$)|([PLNSGBR]\*[1-9][a-i]$)", move))
+    return bool(re.match(r'([1-9][a-i][1-9][a-i]\+?$)|([PLNSGBR]\*[1-9][a-i]$)', move))
 
 def isuci(move):
-    return bool(re.match("([a-i][1-9][a-i][1-9]\+?$)|([PLNSGBR]\*[a-i][1-9]$)", move))
+    return bool(re.match(r'([a-i][1-9][a-i][1-9]\+?$)|([PLNSGBR]\*[a-i][1-9]$)', move))
 
 # changes uci to usi and usi to uci
 def switchusiuci(move) -> str:
